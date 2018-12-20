@@ -1,0 +1,3 @@
+/Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles/Basic_int.dir
