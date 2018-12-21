@@ -53,6 +53,7 @@ void Print::execute(EvalState  &state){
     std::cout<<exp->eval(state)<<std::endl;
 }
 
+
 Input::Input(string var):var(var){}//std::cout<<"New  "<<var<<std::endl;
 
 
@@ -62,26 +63,42 @@ StatementType Input::getType(){
 
 void Input::execute(EvalState  &state){
     int value;
-    std::cout<<" ? ";
     TokenScanner scanner;
-    scanner.ignoreWhitespace();
-    scanner.setInput(getLine());
-    scanner.scanNumbers();
-    string token = scanner.nextToken();
-    TokenType type = scanner.getTokenType(token);
-    if(type!=NUMBER||scanner.hasMoreTokens()){
-        if(token=="-"){
-            value=-1*stringToInteger(scanner.nextToken());
-            state.setValue(var, value);
-            return;
-        }
-        else
-        error("INVALID NUMBER");
+    string token;
+    TokenType type;
+    while(true) {
+       try {
+           std::cout << " ? ";
+           scanner.ignoreWhitespace();
+           scanner.setInput(getLine());
+           scanner.scanNumbers();
+           token = scanner.nextToken();
+           type = scanner.getTokenType(token);
+           //std::cout<<"type"<<type<<NUMBER<<token<<std::endl;
+           if (type != NUMBER || scanner.hasMoreTokens()) {
+               if (token == "-") {
+                   value = -1 * stringToInteger(scanner.nextToken());
+                   state.setValue(var, value);
+                   return;
+               } else
+                   throw Invalid_Number();
+           }
+           if(type==NUMBER&&token.find(".")<token.length()){
+               throw Invalid_Number();
+           }
+       }
+       catch(Invalid_Number &ex){
+                std::cout<<ex.what()<<std::endl;
+                continue;
+       }
+       break;
     }
     value=stringToInteger(token);
     //std::cout<<value<<std::endl;
     state.setValue(var, value);
 }
+
+
 
 Input::~Input(){
     //std::cout<<"Input die"<<std::endl;
@@ -142,3 +159,26 @@ StatementType Help::getType(){
     return HELP;
 }
 
+Divide_Byzero::Divide_Byzero():message("DIVIDE BY ZERO"){
+}
+
+
+Invalid_Number::Invalid_Number():message("INVALID NUMBER"){
+
+}
+
+
+
+Syntax_Error::Syntax_Error():message("SYNTAX ERROR"){
+
+}
+
+
+Var_Ndefined::Var_Ndefined():message("VARIABLE NOT DEFINED"){
+
+}
+
+
+Linenumber_Error::Linenumber_Error():message("LINE NUMBER ERROR"){
+
+}

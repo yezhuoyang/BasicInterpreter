@@ -6,6 +6,7 @@
 #include <string>
 #include "../StanfordCPPLib/error.h"
 #include "evalstate.h"
+#include "statement.h"
 #include "exp.h"
 #include "../StanfordCPPLib/strlib.h"
 using namespace std;
@@ -58,7 +59,7 @@ IdentifierExp::IdentifierExp(string name) {
 }
 
 int IdentifierExp::eval(EvalState & state) {
-   if (!state.isDefined(name)) error("VARIABLE NOT DEFINED");
+   if (!state.isDefined(name)) throw(Var_Ndefined());
    return state.getValue(name);
 }
 
@@ -104,7 +105,7 @@ int CompoundExp::eval(EvalState & state) {
       if(!state.compare)
       {
           if (lhs->getType() != IDENTIFIER) {
-             error("SYNTAX ERROR");
+             throw(Syntax_Error());
           }
           int val = rhs->eval(state);
           state.setValue(((IdentifierExp *) lhs)->getName(), val);
@@ -122,12 +123,12 @@ int CompoundExp::eval(EvalState & state) {
    if (op == "-") return left - right;
    if (op == "*") return left * right;
    if (op == "/") {
-       if(!right) error("DIVIDE BY ZERO");
+       if(!right) throw(Divide_Byzero());
        return left / right;
    }
    if (op == "<") return left<right;
    if(op==">")    return left>right;
-   error("SYNTAX ERROR");
+   throw(Syntax_Error());
    return 0;
 }
 

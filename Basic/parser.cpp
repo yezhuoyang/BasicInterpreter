@@ -60,14 +60,14 @@ Expression *readT(TokenScanner & scanner) {
    if (type == WORD)
    {
        if(token=="LET")
-           error("SYNTAX ERROR");
+           throw Syntax_Error();
        return new IdentifierExp(token);
    }
    if (type == NUMBER) return new ConstantExp(stringToInteger(token));
-   if (token != "(") error("SYNTAX ERROR");
+   if (token != "(") throw Syntax_Error();
    Expression *exp = readE(scanner);
    if (scanner.nextToken() != ")") {
-      error("SYNTAX ERROR");
+       throw Syntax_Error();
    }
    return exp;
 }
@@ -146,7 +146,7 @@ Statement *parseStm(TokenScanner & scanner,EvalState & state){
     if(id=="HELP"){
         ptr=new Help();
     }
-    if(!ptr) error("SYNTAX ERROR");
+    if(!ptr) throw Syntax_Error();
     return ptr;
 
 }

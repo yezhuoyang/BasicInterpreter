@@ -27,7 +27,6 @@ string traceFile = "";
 int runTraces = traceCount, currentTrace = 0;
 bool silent = false, firstFail = false, hideError = false, useColor = true;
 int correct = 0, wrong = 0, total = 0;
-
 void useage(const char* progname) {
   cout
     << progname << " [-h] [-e <your_exec>] [-s <stander_exec>] [-t <trace_file>] [-f] [-m] [-q] [-c]" << endl
@@ -38,7 +37,6 @@ void useage(const char* progname) {
     << "    -f  Stop at first failed test" << endl
     << "    -m  Hide error message" << endl
     << "    -q  Show final score only, cannot use with -t or -f, include -m" << endl
-
   ;
   exit(1);
 }
@@ -75,13 +73,35 @@ void clearTempFiles() {
 }
 
 int testTrace(const char* trace) {
-//  clearTempFiles();
+    string m1=string()+"cat " + trace + " |  " + standerBasic + " > test_ans";
+    string m2=string() + "cat " + trace + " |  " + studentBasic + " > test_out";
+    string m3="cat test_out";
+    string m4="cat test_ans";
+    //cout<<m1<<"  "<<system((m1).c_str()<<endl;
+    //cout<<m2<<"  "<<system((m2).c_str())<<endl;
+    //if (system((m1).c_str()) != 0) return 1;
+    //if (system((m2).c_str()) != 0) return 2;
+    try{
+      system(m1.c_str());
+      system(m2.c_str());
+      system(m3.c_str());
+      system(m4.c_str());
+    }
+    catch(...){
+        cout<<"AN ERROR"<<endl;
+    }
+    if (system("diff test_ans test_out")) return 4;
+    //clearTempFiles();
+    return 0;
+/*
   if (system((string() + "cat " + trace + " |  " + standerBasic + " > test_ans 2> /dev/null").c_str()) != 0) return 1;
   if (system((string() + "cat " + trace + " |  " + studentBasic + " > test_out 2> /dev/null").c_str()) != 0) return 2;
   if (system("diff test_ans test_out > /dev/null 2> /dev/null")) return 4;
   clearTempFiles();
   return 0;
+*/
 }
+ 
 
 void runTest(const string currentTrace) {
   if (!silent) cout << "Trace \"" << currentTrace << "\" ... "; cout.flush();

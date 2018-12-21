@@ -32,9 +32,22 @@ int main() {
       try {
          processLine(getLine(), program, state);
         // cout<<"success"<<endl;
-      } catch (ErrorException & ex) {
-         cerr << ex.getMessage() << endl;
       }
+      catch(Divide_Byzero &ex){
+          cout<<ex.what()<<endl;
+      }
+      catch(Invalid_Number &ex){
+          cout<<ex.what()<<endl;
+      }
+      catch (Syntax_Error &ex){
+          cout<<ex.what()<<endl;
+      }
+       catch (Var_Ndefined &ex){
+           cout<<ex.what()<<endl;
+       }
+       catch (Linenumber_Error &ex){
+           cout<<ex.what()<<endl;
+       }
    }
    return 0;
 }
@@ -74,7 +87,7 @@ void processLine(string line, Program & program, EvalState & state) {
    //std::cout<<"successfully"<<std::endl;
     switch (ptr->getType()) {
         case RUN:
-            state.clear();
+            //state.clear();
             run_Program(program,state);
             break;
         case LIST:
@@ -97,3 +110,5 @@ void processLine(string line, Program & program, EvalState & state) {
    delete ptr;
 
 }
+
+

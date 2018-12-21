@@ -30,12 +30,12 @@ int stringToInteger(string str) {
    istringstream stream(str);
    int value;
    stream >> value >> ws;
-  
+/*
    if (stream.fail()) {
       error("stringToInteger: Illegal integer format (" + str + ")");
    }
    return value;
-
+*/
 
    /*
    if (stream.fail() || !stream.eof()) {
@@ -43,6 +43,7 @@ int stringToInteger(string str) {
    }
    return value;
    */
+    return value;
 }
 
 string realToString(double d) {

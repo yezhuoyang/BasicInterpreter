@@ -6,28 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/yezhuoyang/Desktop/project/Basic/Basic.cpp
-cctype
--
-iostream
--
-string
--
-exp.h
-/Users/yezhuoyang/Desktop/project/Basic/exp.h
-parser.h
-/Users/yezhuoyang/Desktop/project/Basic/parser.h
-program.h
-/Users/yezhuoyang/Desktop/project/Basic/program.h
-../StanfordCPPLib/error.h
-/Users/yezhuoyang/Desktop/project/StanfordCPPLib/error.h
-../StanfordCPPLib/tokenscanner.h
-/Users/yezhuoyang/Desktop/project/StanfordCPPLib/tokenscanner.h
-../StanfordCPPLib/simpio.h
-/Users/yezhuoyang/Desktop/project/StanfordCPPLib/simpio.h
-../StanfordCPPLib/strlib.h
-/Users/yezhuoyang/Desktop/project/StanfordCPPLib/strlib.h
-
 /Users/yezhuoyang/Desktop/project/Basic/evalstate.h
 string
 -
@@ -38,35 +16,21 @@ string
 evalstate.h
 /Users/yezhuoyang/Desktop/project/Basic/evalstate.h
 
-/Users/yezhuoyang/Desktop/project/Basic/parser.h
+/Users/yezhuoyang/Desktop/project/Basic/statement.cpp
 string
 -
-exp.h
-/Users/yezhuoyang/Desktop/project/Basic/exp.h
 statement.h
 /Users/yezhuoyang/Desktop/project/Basic/statement.h
 ../StanfordCPPLib/tokenscanner.h
 /Users/yezhuoyang/Desktop/project/StanfordCPPLib/tokenscanner.h
-
-/Users/yezhuoyang/Desktop/project/Basic/program.h
-string
--
-statement.h
-/Users/yezhuoyang/Desktop/project/Basic/statement.h
+../StanfordCPPLib/simpio.h
+/Users/yezhuoyang/Desktop/project/StanfordCPPLib/simpio.h
 
 /Users/yezhuoyang/Desktop/project/Basic/statement.h
 evalstate.h
 /Users/yezhuoyang/Desktop/project/Basic/evalstate.h
 exp.h
 /Users/yezhuoyang/Desktop/project/Basic/exp.h
-
-/Users/yezhuoyang/Desktop/project/StanfordCPPLib/error.h
-string
--
-exception
--
-private/main.h
-/Users/yezhuoyang/Desktop/project/StanfordCPPLib/private/main.h
 
 /Users/yezhuoyang/Desktop/project/StanfordCPPLib/foreach.h
 iterator
@@ -91,8 +55,6 @@ foreach.h
 /Users/yezhuoyang/Desktop/project/StanfordCPPLib/foreach.h
 stack.h
 /Users/yezhuoyang/Desktop/project/StanfordCPPLib/stack.h
-
-/Users/yezhuoyang/Desktop/project/StanfordCPPLib/private/main.h
 
 /Users/yezhuoyang/Desktop/project/StanfordCPPLib/private/tokenpatch.h
 

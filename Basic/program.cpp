@@ -99,7 +99,7 @@ void run_Program(Program& P, EvalState & state){
                     state.compare=false;
                     iter = P.Statement_map.find(iter->second->linenumber);
                     if(iter==P.Statement_map.end())
-                        error("LINE NUMBER ERROR");
+                        throw Linenumber_Error();
                 }
                 else{
                     ++iter;
@@ -109,7 +109,7 @@ void run_Program(Program& P, EvalState & state){
             case GOTO:
                    iter=P.Statement_map.find(iter->second->linenumber);
                    if(iter==P.Statement_map.end()){
-                       error("LINE NUMBER ERROR");
+                       throw Linenumber_Error();
                    }
                 break;
             case END:

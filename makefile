@@ -31,3 +31,5 @@ tidy:
 
 clean scratch: tidy
 	rm -f *.o *.a $(PROGRAM) spl.jar score
+
+

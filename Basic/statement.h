@@ -149,4 +149,50 @@ class Help:public Statement{
         Help();
         virtual StatementType getType();
 };
+
+
+
+
+class Divide_Byzero{
+   public:
+      Divide_Byzero();
+      string what() const {return message;}
+   private:
+      const string message;
+};
+
+
+
+class Invalid_Number{
+public:
+    Invalid_Number();
+    string what() const {return message;}
+private:
+    const string message;
+};
+
+class Syntax_Error{
+public:
+    Syntax_Error();
+    string what() const {return message;}
+private:
+    const string message;
+};
+
+class Var_Ndefined{
+public:
+    Var_Ndefined();
+    string what() const {return message;}
+private:
+    const string message;
+};
+
+class Linenumber_Error{
+public:
+    Linenumber_Error();
+    string what() const {return message;}
+private:
+    const string message;
+};
+
 #endif
