@@ -27,15 +27,13 @@ int main() {
    EvalState state;
    state.quit=false;
    Program program;
-   cout << "Stub implementation of BASIC" << endl;
+   //cout << "Stub implementation of BASIC" << endl;
    while (!state.quit) {
       try {
          processLine(getLine(), program, state);
+        // cout<<"success"<<endl;
       } catch (ErrorException & ex) {
          cerr << ex.getMessage() << endl;
-
-
-
       }
    }
    return 0;
@@ -55,6 +53,7 @@ int main() {
  */
 
 void processLine(string line, Program & program, EvalState & state) {
+    //std::cout<<"PRO "<<line<<std::endl;
    TokenScanner scanner;
    scanner.ignoreWhitespace();
    scanner.setInput(line);
@@ -63,15 +62,19 @@ void processLine(string line, Program & program, EvalState & state) {
    if(linenum>0){
        if(program.Line_inserted(linenum))
            program.removeSourceLine(linenum);
+       if(!scanner.hasMoreTokens())
+       {
+           return;
+       }
        program.addSourceLine(linenum,line);
        program.setParsedStatement(linenum,parseStm(scanner,state));
        return;
    }
-
    Statement *ptr=parseStm(scanner,state);
    //std::cout<<"successfully"<<std::endl;
     switch (ptr->getType()) {
         case RUN:
+            state.clear();
             run_Program(program,state);
             break;
         case LIST:
@@ -79,15 +82,18 @@ void processLine(string line, Program & program, EvalState & state) {
             break;
         case CLEAR:
             program.clear();
+            state.clear();
             break;
         case QUIT:
             state.quit=true;
             break;
         case HELP:
-            std::cout<<"Hello Idiot!"<<std::endl;
+            //std::cout<<"Hello Idiot!"<<std::endl;
             break;
         default:
             ptr->execute(state);
     }
+    //std::cout<<"ptr"<<std::endl;
    delete ptr;
+
 }

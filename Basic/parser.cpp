@@ -24,7 +24,6 @@ Expression *parseExp(TokenScanner & scanner) {
    return exp;
 }
 
-
 /*
  * Implementation notes: readE
  * Usage: exp = readE(scanner, prec);
@@ -35,6 +34,7 @@ Expression *parseExp(TokenScanner & scanner) {
  * than the prevailing one.  When a higher-precedence operator is found,
  * readE calls itself recursively to read in that subexpression as a unit.
  */
+
 Expression *readE(TokenScanner & scanner, int prec) {
    Expression *exp = readT(scanner);
    string token;
@@ -57,7 +57,12 @@ Expression *readE(TokenScanner & scanner, int prec) {
 Expression *readT(TokenScanner & scanner) {
    string token = scanner.nextToken();
    TokenType type = scanner.getTokenType(token);
-   if (type == WORD) return new IdentifierExp(token);
+   if (type == WORD)
+   {
+       if(token=="LET")
+           error("SYNTAX ERROR");
+       return new IdentifierExp(token);
+   }
    if (type == NUMBER) return new ConstantExp(stringToInteger(token));
    if (token != "(") error("SYNTAX ERROR");
    Expression *exp = readE(scanner);
@@ -143,4 +148,5 @@ Statement *parseStm(TokenScanner & scanner,EvalState & state){
     }
     if(!ptr) error("SYNTAX ERROR");
     return ptr;
+
 }

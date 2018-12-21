@@ -13,17 +13,18 @@
 #include "../StanfordCPPLib/simpio.h"
 /* Implementation of the Statement class */
 
+
 Statement::Statement() { 
-   /* Empty */
+   exp=NULL;
 }
 
 Statement::~Statement() {
    delete exp;
+    //std::cout<<"father die"<<std::endl;
 }
 
 void Statement::execute(EvalState  &state){
 }
-
 
 Comment::Comment(){}
 
@@ -52,7 +53,7 @@ void Print::execute(EvalState  &state){
     std::cout<<exp->eval(state)<<std::endl;
 }
 
-Input::Input(string var):var(var){}
+Input::Input(string var):var(var){}//std::cout<<"New  "<<var<<std::endl;
 
 
 StatementType Input::getType(){
@@ -61,7 +62,7 @@ StatementType Input::getType(){
 
 void Input::execute(EvalState  &state){
     int value;
-    std::cout<<"? ";
+    std::cout<<" ? ";
     TokenScanner scanner;
     scanner.ignoreWhitespace();
     scanner.setInput(getLine());
@@ -69,11 +70,22 @@ void Input::execute(EvalState  &state){
     string token = scanner.nextToken();
     TokenType type = scanner.getTokenType(token);
     if(type!=NUMBER||scanner.hasMoreTokens()){
+        if(token=="-"){
+            value=-1*stringToInteger(scanner.nextToken());
+            state.setValue(var, value);
+            return;
+        }
+        else
         error("INVALID NUMBER");
     }
     value=stringToInteger(token);
+    //std::cout<<value<<std::endl;
     state.setValue(var, value);
 }
+
+Input::~Input(){
+    //std::cout<<"Input die"<<std::endl;
+};
 
 
 StatementType End::getType(){

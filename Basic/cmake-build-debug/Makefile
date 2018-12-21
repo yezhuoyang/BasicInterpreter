@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/yezhuoyang/Desktop/Basic_int/Basic_int
+CMAKE_SOURCE_DIR = /Users/yezhuoyang/Desktop/project/Basic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/yezhuoyang/Desktop/project/Basic/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles /Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yezhuoyang/Desktop/project/Basic/cmake-build-debug/CMakeFiles /Users/yezhuoyang/Desktop/project/Basic/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yezhuoyang/Desktop/project/Basic/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Basic_int
+# Target rules for targets named Basic
 
 # Build rule for target.
-Basic_int: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Basic_int
-.PHONY : Basic_int
+Basic: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Basic
+.PHONY : Basic
 
 # fast build rule for target.
-Basic_int/fast:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/build
-.PHONY : Basic_int/fast
+Basic/fast:
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/build
+.PHONY : Basic/fast
 
 Basic.o: Basic.cpp.o
 
@@ -129,7 +129,7 @@ Basic.o: Basic.cpp.o
 
 # target to build an object file
 Basic.cpp.o:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/Basic.cpp.o
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/Basic.cpp.o
 .PHONY : Basic.cpp.o
 
 Basic.i: Basic.cpp.i
@@ -138,7 +138,7 @@ Basic.i: Basic.cpp.i
 
 # target to preprocess a source file
 Basic.cpp.i:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/Basic.cpp.i
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/Basic.cpp.i
 .PHONY : Basic.cpp.i
 
 Basic.s: Basic.cpp.s
@@ -147,7 +147,7 @@ Basic.s: Basic.cpp.s
 
 # target to generate assembly for a file
 Basic.cpp.s:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/Basic.cpp.s
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/Basic.cpp.s
 .PHONY : Basic.cpp.s
 
 evalstate.o: evalstate.cpp.o
@@ -156,7 +156,7 @@ evalstate.o: evalstate.cpp.o
 
 # target to build an object file
 evalstate.cpp.o:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/evalstate.cpp.o
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/evalstate.cpp.o
 .PHONY : evalstate.cpp.o
 
 evalstate.i: evalstate.cpp.i
@@ -165,7 +165,7 @@ evalstate.i: evalstate.cpp.i
 
 # target to preprocess a source file
 evalstate.cpp.i:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/evalstate.cpp.i
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/evalstate.cpp.i
 .PHONY : evalstate.cpp.i
 
 evalstate.s: evalstate.cpp.s
@@ -174,7 +174,7 @@ evalstate.s: evalstate.cpp.s
 
 # target to generate assembly for a file
 evalstate.cpp.s:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/evalstate.cpp.s
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/evalstate.cpp.s
 .PHONY : evalstate.cpp.s
 
 exp.o: exp.cpp.o
@@ -183,7 +183,7 @@ exp.o: exp.cpp.o
 
 # target to build an object file
 exp.cpp.o:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/exp.cpp.o
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/exp.cpp.o
 .PHONY : exp.cpp.o
 
 exp.i: exp.cpp.i
@@ -192,7 +192,7 @@ exp.i: exp.cpp.i
 
 # target to preprocess a source file
 exp.cpp.i:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/exp.cpp.i
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/exp.cpp.i
 .PHONY : exp.cpp.i
 
 exp.s: exp.cpp.s
@@ -201,35 +201,8 @@ exp.s: exp.cpp.s
 
 # target to generate assembly for a file
 exp.cpp.s:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/exp.cpp.s
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/exp.cpp.s
 .PHONY : exp.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/main.cpp.s
-.PHONY : main.cpp.s
 
 parser.o: parser.cpp.o
 
@@ -237,7 +210,7 @@ parser.o: parser.cpp.o
 
 # target to build an object file
 parser.cpp.o:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/parser.cpp.o
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/parser.cpp.o
 .PHONY : parser.cpp.o
 
 parser.i: parser.cpp.i
@@ -246,7 +219,7 @@ parser.i: parser.cpp.i
 
 # target to preprocess a source file
 parser.cpp.i:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/parser.cpp.i
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/parser.cpp.i
 .PHONY : parser.cpp.i
 
 parser.s: parser.cpp.s
@@ -255,7 +228,7 @@ parser.s: parser.cpp.s
 
 # target to generate assembly for a file
 parser.cpp.s:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/parser.cpp.s
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/parser.cpp.s
 .PHONY : parser.cpp.s
 
 program.o: program.cpp.o
@@ -264,7 +237,7 @@ program.o: program.cpp.o
 
 # target to build an object file
 program.cpp.o:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/program.cpp.o
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/program.cpp.o
 .PHONY : program.cpp.o
 
 program.i: program.cpp.i
@@ -273,7 +246,7 @@ program.i: program.cpp.i
 
 # target to preprocess a source file
 program.cpp.i:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/program.cpp.i
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/program.cpp.i
 .PHONY : program.cpp.i
 
 program.s: program.cpp.s
@@ -282,7 +255,7 @@ program.s: program.cpp.s
 
 # target to generate assembly for a file
 program.cpp.s:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/program.cpp.s
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/program.cpp.s
 .PHONY : program.cpp.s
 
 statement.o: statement.cpp.o
@@ -291,7 +264,7 @@ statement.o: statement.cpp.o
 
 # target to build an object file
 statement.cpp.o:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/statement.cpp.o
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/statement.cpp.o
 .PHONY : statement.cpp.o
 
 statement.i: statement.cpp.i
@@ -300,7 +273,7 @@ statement.i: statement.cpp.i
 
 # target to preprocess a source file
 statement.cpp.i:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/statement.cpp.i
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/statement.cpp.i
 .PHONY : statement.cpp.i
 
 statement.s: statement.cpp.s
@@ -309,7 +282,7 @@ statement.s: statement.cpp.s
 
 # target to generate assembly for a file
 statement.cpp.s:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/statement.cpp.s
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/statement.cpp.s
 .PHONY : statement.cpp.s
 
 # Help Target
@@ -320,7 +293,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Basic_int"
+	@echo "... Basic"
 	@echo "... Basic.o"
 	@echo "... Basic.i"
 	@echo "... Basic.s"
@@ -330,9 +303,6 @@ help:
 	@echo "... exp.o"
 	@echo "... exp.i"
 	@echo "... exp.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 	@echo "... parser.o"
 	@echo "... parser.i"
 	@echo "... parser.s"

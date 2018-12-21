@@ -59,45 +59,45 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/yezhuoyang/Desktop/Basic_int/Basic_int
+CMAKE_SOURCE_DIR = /Users/yezhuoyang/Desktop/project/Basic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/yezhuoyang/Desktop/project/Basic/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/Basic_int.dir
+# Target rules for target CMakeFiles/Basic.dir
 
 # All Build rule for target.
-CMakeFiles/Basic_int.dir/all:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/depend
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Basic_int"
-.PHONY : CMakeFiles/Basic_int.dir/all
+CMakeFiles/Basic.dir/all:
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/depend
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yezhuoyang/Desktop/project/Basic/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Basic"
+.PHONY : CMakeFiles/Basic.dir/all
 
 # Include target in all.
-all: CMakeFiles/Basic_int.dir/all
+all: CMakeFiles/Basic.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Basic_int.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Basic_int.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yezhuoyang/Desktop/Basic_int/Basic_int/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Basic_int.dir/rule
+CMakeFiles/Basic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yezhuoyang/Desktop/project/Basic/cmake-build-debug/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Basic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yezhuoyang/Desktop/project/Basic/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Basic.dir/rule
 
 # Convenience name for target.
-Basic_int: CMakeFiles/Basic_int.dir/rule
+Basic: CMakeFiles/Basic.dir/rule
 
-.PHONY : Basic_int
-
-# clean rule for target.
-CMakeFiles/Basic_int.dir/clean:
-	$(MAKE) -f CMakeFiles/Basic_int.dir/build.make CMakeFiles/Basic_int.dir/clean
-.PHONY : CMakeFiles/Basic_int.dir/clean
+.PHONY : Basic
 
 # clean rule for target.
-clean: CMakeFiles/Basic_int.dir/clean
+CMakeFiles/Basic.dir/clean:
+	$(MAKE) -f CMakeFiles/Basic.dir/build.make CMakeFiles/Basic.dir/clean
+.PHONY : CMakeFiles/Basic.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Basic.dir/clean
 
 .PHONY : clean
 

@@ -9,6 +9,7 @@
 #ifndef _evalstate_h
 #define _evalstate_h
 #include <string>
+using namespace std;
 #include "../StanfordCPPLib/map.h"
 /*
  * Class: EvalState
@@ -43,26 +44,26 @@ public:
  * ----------------------------------
  * Sets the value associated with the specified var.
  */
-   void setValue(std::string var, int value);
+   void setValue(string var, int value);
 /*
  * Method: getValue
  * Usage: int value = state.getValue(var);
  * ---------------------------------------
  * Returns the value associated with the specified variable.
  */
-   int getValue(std::string var);
+   int getValue(string var);
 /*
  * Method: isDefined
  * Usage: if (state.isDefined(var)) . . .
  * --------------------------------------
  * Returns true if the specified variable is defined.
  */
-   bool isDefined(std::string var);
+   bool isDefined(string var);
    bool compare;
    bool quit;
+    void clear();
 private:
-   Map<std::string,int> symbolTable;
-
+   Map<string,int>  symbolTable;
 };
 
 #endif

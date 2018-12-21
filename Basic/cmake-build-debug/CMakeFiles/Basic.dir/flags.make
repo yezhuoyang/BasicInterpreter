@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/Ma
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/yezhuoyang/Desktop/Basic_int/Basic_int/. 
+CXX_INCLUDES = -I/Users/yezhuoyang/Desktop/project/Basic/. 
 

@@ -5,13 +5,12 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(Basic_int
+add_executable(Basic
         Basic.cpp
         evalstate.cpp
         evalstate.h
         exp.cpp
         exp.h
-        main.cpp
         parser.cpp
         parser.h
         program.cpp
@@ -20,4 +19,6 @@ add_executable(Basic_int
         statement.h)
 
 
-link_directories(${Basic_int_SOURCE_DIR}/StanfordCPPLib)
+
+target_link_libraries(Basic /Users/yezhuoyang/Desktop/project/libStanfordCPPLib.a)
+#link_directories("${Basic_int_SOURCE_DIR}/StanfordCPPLib")

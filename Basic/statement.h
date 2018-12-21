@@ -95,6 +95,7 @@ class Input:public Statement{
     public:
         explicit Input(string var);
         virtual void execute(EvalState & state);
+        virtual ~Input();
         virtual StatementType getType();
     private:
         string var;

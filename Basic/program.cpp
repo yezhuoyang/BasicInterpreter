@@ -20,7 +20,6 @@ Program::~Program() {
     {
         delete (iter->second);
     }
-
 }
 
 void Program::clear() {
@@ -41,6 +40,10 @@ void Program::removeSourceLine(int lineNumber) {
     map<int,string>::iterator iter;
     iter=Source_map.find(lineNumber);
     Source_map.erase(iter);
+    map<int,Statement*>::iterator iter1;
+    iter1=Statement_map.find(lineNumber);
+    delete  iter1->second;
+    Statement_map.erase(iter1);
 }
 
 string Program::getSourceLine(int lineNumber) {
@@ -86,6 +89,9 @@ int Program::getNextLineNumber(int lineNumber) {
 void run_Program(Program& P, EvalState & state){
     map<int,Statement*>::iterator iter=P.Statement_map.begin();
     while(iter!=P.Statement_map.end()){
+
+        //cout<<"L  "<<iter->first<<endl;
+
         switch (iter->second->getType()) {
             case IF:
                 state.compare=true;
@@ -99,7 +105,6 @@ void run_Program(Program& P, EvalState & state){
                     ++iter;
                     state.compare=false;
                 }
-
                 break;
             case GOTO:
                    iter=P.Statement_map.find(iter->second->linenumber);
